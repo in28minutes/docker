@@ -27,6 +27,11 @@ docker run -d -p 8761:8761 springcloud/eureka
 docker run -d -e MYSQL_ROOT_PASSWORD=dummypassword -e MYSQL_USER=todos-user -e MYSQL_PASSWORD=dummytodos -e MYSQL_DATABASE=todos --p 3306:3306 mysql:5.7
 ```
 
+
+![Traditional Deployment](images/docker-traditional-deployment.png)
+![Docker Deployment](images/docker-zz-deployment.png)
+
+
 ### Step 02 - Playing with Docker - Containers and Images
 
 Image is static
@@ -61,6 +66,7 @@ Container is dynamic
 
 ### Step 03 - How does Docker work?
 
+![Docker Architecture](images/docker-architecture.png)
 
 ### Step 04 - Manually creating a new docker image
 
