@@ -38,8 +38,8 @@ docker run -d -e MYSQL_ROOT_PASSWORD=dummypassword -e MYSQL_USER=todos-user -e M
 
 ### Step 02 - Playing with Docker - Containers and Images
 
-Image is static
-Container is dynamic
+- Image is static
+- Container is dynamic
 ```
   579  docker run -d -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
   580  docker images
@@ -99,6 +99,7 @@ Run com.in28minutes.rest.webservices.restfulwebservices.RestfulWebServicesApplic
 - Problem - Error creating the Docker image on MacOS - java.io.IOException: Cannot run program “docker-credential-osxkeychain”: error=2, No such file or directory
 - Solution - https://medium.com/@dakshika/error-creating-the-docker-image-on-macos-wso2-enterprise-integrator-tooling-dfb5b537b44e
 
+
 #### Creating Containers
 
 To test execute API at http://localhost:5000/users/in28minutes/todos.
@@ -107,8 +108,7 @@ To test execute API at http://localhost:5000/users/in28minutes/todos.
 docker login
 ```
 
-
-## Hello World URLS
+#### Hello World URLS
 
 - http://localhost:5000/hello-world
 
@@ -129,7 +129,7 @@ Hello World
 ```
 
 
-## Todo JPA Resource URLs
+#### Todo JPA Resource URLs
 
 - GET - http://localhost:5000/jpa/users/in28minutes/todos
 
@@ -159,7 +159,7 @@ Hello World
 ]
 ```
 
-#### Retrieve a specific todo
+##### Retrieve a specific todo
 
 - GET - http://localhost:5000/jpa/users/in28minutes/todos/10001
 
@@ -173,7 +173,7 @@ Hello World
 }
 ```
 
-#### Creating a new todo
+##### Creating a new todo
 
 - POST to http://localhost:5000/jpa/users/in28minutes/todos with BODY of Request given below
 
@@ -186,7 +186,7 @@ Hello World
 }
 ```
 
-#### Updating a new todo
+##### Updating a new todo
 
 - http://localhost:5000/jpa/users/in28minutes/todos/10001 with BODY of Request given below
 
@@ -200,12 +200,12 @@ Hello World
 }
 ```
 
-#### Delete todo
+##### Delete todo
 
 - DELETE to http://localhost:5000/jpa/users/in28minutes/todos/10001
 
 
-## H2 Console
+#### H2 Console
 
 - http://localhost:5000/h2-console
 - Use `jdbc:h2:mem:testdb` as JDBC URL 
