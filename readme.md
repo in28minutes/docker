@@ -111,10 +111,12 @@ docker run -d -e MYSQL_ROOT_PASSWORD=dummypassword -e MYSQL_USER=todos-user -e M
 ### Step 04 - Manually creating a new docker image
 
 ```
-ID=$(docker run -dit openjdk:8-jdk-alpine)
-docker container cp spring-boot-rest-api-playground-h2-0.0.1-SNAPSHOT.jar $ID:/tmp
-docker container commit --change='CMD ["java", "-jar","/tmp/spring-boot-rest-api-playground-h2-0.0.1-SNAPSHOT.jar"]' $ID  in28min/spring-boot-manual:v2
-docker container run -p 5000:5000 in28min/spring-boot-manual
+  716  docker run -dit openjdk:8-jdk-alpine
+  720  docker container cp target/docker-in-5-steps-todo-rest-api-h2-1.0.0.RELEASE.jar 28d5e5d893fdb1530e9920ff66fee252adc834a8b572b77b3fdf7d316730127c:/tmp
+  725  docker container exec romantic_aryabhata ls /tmp
+    734  docker container commit romantic_aryabhata in28min/manual-todo-rest-api:v1
+  735  docker container commit --change='CMD ["java","-jar","/tmp/docker-in-5-steps-todo-rest-api-h2-1.0.0.RELEASE.jar"]' romantic_aryabhata in28min/manual-todo-rest-api:v2
+  743  docker run -d -p 5000:5000 in28min/manual-todo-rest-api:v2
 ```
 
 ### Step 05 : Containerizing Spring Boot Application using Dockerfile and Spotify Maven Plugin
@@ -122,9 +124,9 @@ docker container run -p 5000:5000 in28min/spring-boot-manual
 Run com.in28minutes.rest.webservices.restfulwebservices.RestfulWebServicesApplication as a Java Application.
 
 - mvn package
-- docker run in28min/todo-rest-api-h2:0.0.1-SNAPSHOT
-- docker run -p 5000:5000 in28min/todo-rest-api-h2:0.0.1-SNAPSHOT
-- docker run -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+- docker run -d -p 5000:5000 in28min/docker-in-5-steps-todo-rest-api-h2:1.0.0.RELEASE
+- docker login
+- docker push in28min/docker-in-5-steps-todo-rest-api-h2:1.0.0.RELEASE
 
 #### Troubleshooting
 
