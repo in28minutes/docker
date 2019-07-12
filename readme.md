@@ -2,6 +2,8 @@
 
 Let's learn Docker in 5 Easy Steps. 
 
+Watch the Video Now - https://www.youtube.com/watch?v=Rt5G5Gj7RP0
+
 - Step 00 - Installing Docker
 - Step 01 - A simple Docker use case - Run an existing application
 - Step 02 - Playing with Docker - Containers and Images
